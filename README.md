@@ -2,4 +2,4 @@
 
 Project:Brownian motion
 
-Purpose:
+Purpose:simlate the trajectory  of particale in fluid medium and try to describe this experience in an animation
