@@ -2,18 +2,17 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
-frontprobaility = 0.5;
-n = 600;
+n = 600; # walk n times
 lis=[0]; # record each position
+mu, sigma = 0, 1 # mean and standard deviation
+
 
 count = 0;
 for i in range(1,n):
-    # walk n times
-    y = random.random()
-    if  frontprobaility > y:
-        count = count + 1
-    else:
-        count = count -1 
+    y = np.random.normal(mu, sigma)
+    m = int(10*y)
+    count = count + m*1 
     lis.append(count)
 
 plt.plot(lis)
+plt.show()
