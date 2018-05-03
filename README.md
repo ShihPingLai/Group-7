@@ -12,3 +12,4 @@ Step:
 members:
 詹益銓: stock analysis and testing
 范凱傑: testing
+林佳瑩: math deriving and fundamental model coding
