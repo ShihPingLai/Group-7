@@ -1,0 +1,19 @@
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+frontprobaility = 0.5;
+n = 600;
+lis=[0]; # record each position
+
+count = 0;
+for i in range(1,n):
+    # walk n times
+    y = random.random()
+    if  frontprobaility > y:
+        count = count + 1
+    else:
+        count = count -1 
+    lis.append(count)
+
+plt.plot(lis)
