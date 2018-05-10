@@ -1,0 +1,45 @@
+import numpy as np
+import random
+import math
+import matplotlib.pyplot as plt
+
+n = 100;
+lis=[0]; # record each position
+p_forward = 0.5;
+p_backward = 1 - p_forward;
+meanwalk = 0;
+
+count = 0;
+for i in range(1,n):
+    # walk n times
+    y = random.random()
+    if  p_forward > y:
+        count = count + 1
+    else:
+        count = count -1 
+    lis.append(count)
+    
+print sum(lis)/n
+plt.plot(lis)
+
+
+def C(n,j):
+    a = math.factorial(n)
+    b = math.factorial(j)
+    c = math.factorial(n-j)
+    return a/(b*c)
+
+def P(n,j):
+    return C(n,j)*(p_forward)**j * (p_backward)**(n-j)
+
+a = 0;
+mean = 0;
+for i in range(n+1):
+    mean = mean + P(n,i)*( -n + 2*i )
+print mean
+
+var = 0;
+for i in range(n+1):
+    var = var + P(n,i)*( -n + 2*i - mean )**2
+standard = var**0.5
+print standard
