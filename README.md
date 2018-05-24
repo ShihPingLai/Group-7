@@ -14,4 +14,4 @@ Members:
 范凱傑: testing
 林佳瑩: math deriving and fundamental model coding
 林正庸: coding and testing
-柯冠宇: test fundamental model coding
+柯冠宇: ainmation
