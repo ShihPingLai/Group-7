@@ -1,0 +1,65 @@
+import numpy as np
+import random
+import math
+import matplotlib.pyplot as plt
+
+k = 1000 # k runs
+n = 1000; # n steps
+lis = [0]; # record each position in single run
+test = np.zeros(k);
+p_forward = 0.5;
+p_backward = 1 - p_forward;
+meanwalk = 0;
+
+
+for j in range(k):
+    lis=[0];
+    count = 0;
+    for i in range(1,n):
+        y = random.random()
+        if  p_forward > y:
+            count = count + 1
+        else:
+            count = count -1 
+        lis.append(count)
+    test[j] = lis[n-1]
+print "Average to our experiment is %s ." %(np.mean(test))
+
+my_dict = {}
+for i in test:
+    if i not in my_dict:
+        my_dict[i] = 1
+    else:
+        my_dict[i] += 1
+# create x and y axis
+x = []
+y = []
+for key in my_dict:
+    x.append(key)
+    y.append(my_dict[key])
+
+plt.scatter(x,y)
+
+
+
+## This part is for theoretical calculation
+def C(n,j):
+    a = math.factorial(n)
+    b = math.factorial(j)
+    c = math.factorial(n-j)
+    return a/(b*c)
+
+def P(n,j):
+    return C(n,j)*(p_forward)**j * (p_backward)**(n-j)
+
+a = 0;
+mean = 0;
+for i in range(n+1):
+    mean = mean + P(n,i)*( -n + 2*i )
+print "Theoretical mean value for random walk at n step is %s ." %(mean)
+
+var = 0;
+for i in range(n+1):
+    var = var + P(n,i)*( -n + 2*i - mean )**2
+standard = var**0.5
+print  "Theoretical standard value for random walk at n step is %s ." %(standard)
