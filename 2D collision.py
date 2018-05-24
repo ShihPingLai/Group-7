@@ -142,7 +142,7 @@ def animate(i):
 ani = animation.FuncAnimation(fig, animate, frames=600,
                               interval=10, blit=True, init_func=init)
 
-ani.save('particle_box.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+
 
 plt.show()
 
