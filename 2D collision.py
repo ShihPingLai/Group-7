@@ -141,7 +141,9 @@ def animate(i):
 
 ani = animation.FuncAnimation(fig, animate, frames=600,
                               interval=10, blit=True, init_func=init)
-
+#need imagemagick-7.0.4-6 already installed
+#store to mp4
+ani.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
 
 
 plt.show()
