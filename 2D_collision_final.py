@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[6]:
-
-
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
 import matplotlib.pyplot as plt
@@ -28,7 +22,7 @@ class ParticleBox:
                  size = 0.04,
                  M = 0.05):
         
-        b=[]  
+        b=[]  # just my notation with no meaning
         self.init_state = np.asarray(init_state, dtype=float)
         b=M * np.ones(self.init_state.shape[0])
         #special partical with 2M
@@ -115,7 +109,7 @@ init_state = -0.5 + np.random.random((160, 4))
 init_state[:, :2] *= 3.9
 #set special partical with 2M at origin and v=0
 init_state[-1, :]=0
-#x0 y0 are the position of special partical
+#x0 ,y0 are the position of special partical
 x0=[]
 y0=[]
 box = ParticleBox(init_state, size=0.04)
@@ -163,7 +157,8 @@ def animate(i):
     return particles, rect
 ani = animation.FuncAnimation(fig, animate, frames=600,
                               interval=10, blit=True, init_func=init)
-
+#need imagemagick-7.0.4-6 already installed
+#store to mp4
 ani.save('animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
 
 plt.show()
