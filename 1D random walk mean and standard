@@ -3,9 +3,8 @@ import random
 import math
 import matplotlib.pyplot as plt
 
-k = 1000 # k runs
-n = 1000; # n steps
-lis = [0]; # record each position in single run
+k = 100000 # k runs
+n = 500; # n steps
 test = np.zeros(k);
 p_forward = 0.5;
 p_backward = 1 - p_forward;
@@ -13,7 +12,6 @@ meanwalk = 0;
 
 
 for j in range(k):
-    lis=[0];
     count = 0;
     for i in range(1,n):
         y = random.random()
@@ -21,8 +19,7 @@ for j in range(k):
             count = count + 1
         else:
             count = count -1 
-        lis.append(count)
-    test[j] = lis[n-1]
+    test[j] = count
 print "Average to our experiment is %s ." %(np.mean(test))
 
 my_dict = {}
@@ -37,8 +34,8 @@ y = []
 for key in my_dict:
     x.append(key)
     y.append(my_dict[key])
-
 plt.scatter(x,y)
+plt.show()
 
 
 
