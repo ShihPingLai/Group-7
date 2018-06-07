@@ -157,7 +157,7 @@ def animate(i):
     return particles, rect
 ani = animation.FuncAnimation(fig, animate, frames=600,
                               interval=10, blit=True, init_func=init)
-#need imagemagick-7.0.4-6 already installed
+#need imagemagick already installed
 #store to mp4
 ani.save('animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
 
