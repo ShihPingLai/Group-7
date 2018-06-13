@@ -144,7 +144,7 @@ def animate(i):
     """perform animation step"""
     global box, rect, dt, ax, fig
     box.step(dt)
-    plt.plot(x0,y0)
+    plt.plot(x0,y0,"r")
     
 
     ms = int(fig.dpi * 2 * box.size * fig.get_figwidth()
