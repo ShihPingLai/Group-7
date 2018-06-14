@@ -10,11 +10,11 @@ Step:
 
 
 Members:
-詹益銓: stock analysis and testing
-范凱傑: testing
-林佳瑩: math deriving and fundamental model coding
-林正庸: coding and testing
-柯冠宇: ainmation (need imagemagick)
+詹益銓: stock analysis and testing  
+范凱傑: testing  
+林佳瑩: math deriving and fundamental model coding  
+林正庸: coding and testing  
+柯冠宇: ainmation (need imagemagick)  
 
 
 Week1:
