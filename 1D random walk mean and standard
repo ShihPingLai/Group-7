@@ -21,6 +21,7 @@ for j in range(k):
             count = count -1 
     test[j] = count
 print "Average to our experiment is %s ." %(np.mean(test))
+print "Standard to our experiment is %s ." %(np.std(test))
 
 my_dict = {}
 for i in test:
