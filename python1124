@@ -1,0 +1,24 @@
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+n = 1000; # walk n times
+lisx=[0]; # record each x position
+lisy=[0]; # record each y position
+mu, sigma = 0, 1 # mean and standard deviation
+
+
+countx = 0;
+county = 0;
+for i in range(1,n):
+    x = np.random.normal(mu, sigma)
+    y = np.random.normal(mu, sigma)
+    mx = int(10*x)
+    countx = countx + mx
+    lisx.append(countx)
+    my = int(10*y)
+    county = county + my
+    lisy.append(county)
+
+plt.plot(lisx,lisy)
+plt.show()
